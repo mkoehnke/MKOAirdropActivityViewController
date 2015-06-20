@@ -13,8 +13,8 @@
 		BF77286F1B35378300E87755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF77286D1B35378300E87755 /* Main.storyboard */; };
 		BF7728711B35378300E87755 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7728701B35378300E87755 /* Images.xcassets */; };
 		BF7728741B35378300E87755 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7728721B35378300E87755 /* LaunchScreen.xib */; };
-		BF77288C1B35380A00E87755 /* MKOAirdropActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77288B1B35380A00E87755 /* MKOAirdropActivityViewController.m */; };
 		BF77288F1B353CEB00E87755 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77288E1B353CEB00E87755 /* Button.m */; };
+		BF7728931B35470A00E87755 /* MKOAirdropActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7728921B35470A00E87755 /* MKOAirdropActivityViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,10 +28,10 @@
 		BF77286E1B35378300E87755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF7728701B35378300E87755 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF7728731B35378300E87755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BF77288A1B35380A00E87755 /* MKOAirdropActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOAirdropActivityViewController.h; sourceTree = "<group>"; };
-		BF77288B1B35380A00E87755 /* MKOAirdropActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKOAirdropActivityViewController.m; sourceTree = "<group>"; };
 		BF77288D1B353CEB00E87755 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		BF77288E1B353CEB00E87755 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		BF7728911B35470A00E87755 /* MKOAirdropActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOAirdropActivityViewController.h; sourceTree = "<group>"; };
+		BF7728921B35470A00E87755 /* MKOAirdropActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKOAirdropActivityViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 		BF7728621B35378300E87755 /* MKOAirdropActivityViewControllerSample */ = {
 			isa = PBXGroup;
 			children = (
-				BF7728891B35380A00E87755 /* MKOAirdropViewController */,
+				BF7728901B35470A00E87755 /* MKOAirdropActivityViewController */,
 				BF7728671B35378300E87755 /* AppDelegate.h */,
 				BF7728681B35378300E87755 /* AppDelegate.m */,
 				BF77286A1B35378300E87755 /* ViewController.h */,
@@ -88,14 +88,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BF7728891B35380A00E87755 /* MKOAirdropViewController */ = {
+		BF7728901B35470A00E87755 /* MKOAirdropActivityViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BF77288A1B35380A00E87755 /* MKOAirdropActivityViewController.h */,
-				BF77288B1B35380A00E87755 /* MKOAirdropActivityViewController.m */,
+				BF7728911B35470A00E87755 /* MKOAirdropActivityViewController.h */,
+				BF7728921B35470A00E87755 /* MKOAirdropActivityViewController.m */,
 			);
-			name = MKOAirdropViewController;
-			path = ../../MKOAirdropViewController;
+			name = MKOAirdropActivityViewController;
+			path = ../../MKOAirdropActivityViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +169,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF77286C1B35378300E87755 /* ViewController.m in Sources */,
-				BF77288C1B35380A00E87755 /* MKOAirdropActivityViewController.m in Sources */,
 				BF77288F1B353CEB00E87755 /* Button.m in Sources */,
+				BF7728931B35470A00E87755 /* MKOAirdropActivityViewController.m in Sources */,
 				BF7728691B35378300E87755 /* AppDelegate.m in Sources */,
 				BF7728661B35378300E87755 /* main.m in Sources */,
 			);
