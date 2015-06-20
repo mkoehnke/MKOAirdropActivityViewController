@@ -74,12 +74,15 @@ static NSUInteger MKONumberOfActivitySections = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self __modifyCollectionViews:self.view];
-    [self set__proxyDatasource:[MKOAirdropActivityViewControllerProxyDatasource proxyWithDatasource:self.__collectionView.dataSource]];
-    [self.__collectionView setDataSource:self.__proxyDatasource];
+    if ([self operatingSystemIsSupported]) {
+        [self __modifyCollectionViews:self.view];
+        [self set__proxyDatasource:[MKOAirdropActivityViewControllerProxyDatasource proxyWithDatasource:self.__collectionView.dataSource]];
+        [self.__collectionView setDataSource:self.__proxyDatasource];
+    }
 }
 
 - (void)__modifyCollectionViews:(UIView *)currentView {
+    if (self.__collectionView) return;
     for (UIView *subview in currentView.subviews) {
         if ([self __isMainCollectionView:subview]) {
             self.__collectionView = (UICollectionView *)subview;
@@ -87,7 +90,7 @@ static NSUInteger MKONumberOfActivitySections = 3;
             for (NSUInteger i = 0; i < subview.subviews.count; i++) {
                 [subview.subviews[i] setHidden:!(i == 0 && isAirdropShown)];
             }
-            break;
+            return;
         }
         [self __modifyCollectionViews:subview];
     }
@@ -103,6 +106,13 @@ static NSUInteger MKONumberOfActivitySections = 3;
 
 - (void)setExcludedActivityTypes:(NSArray *)excludedActivityTypes {
     // In order to have a consistent number of sections, we ignore excluded activity types here.
+}
+
+
+- (BOOL)operatingSystemIsSupported {
+    NSOperatingSystemVersion version = {8, 0 ,0};
+    return [[NSProcessInfo processInfo] respondsToSelector:@selector(isOperatingSystemAtLeastVersion:)] &&
+           [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:version];
 }
 
 @end
