@@ -29,7 +29,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="showAirDrop" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mff-p1-DTj"/>
+                                    <action selector="showAirDrop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GBb-fC-6GX"/>
                                 </connections>
                             </button>
                         </subviews>
