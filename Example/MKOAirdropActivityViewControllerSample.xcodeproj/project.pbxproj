@@ -13,18 +13,9 @@
 		BF77286F1B35378300E87755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF77286D1B35378300E87755 /* Main.storyboard */; };
 		BF7728711B35378300E87755 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF7728701B35378300E87755 /* Images.xcassets */; };
 		BF7728741B35378300E87755 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF7728721B35378300E87755 /* LaunchScreen.xib */; };
-		BF7728801B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77287F1B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.m */; };
+		BF77288C1B35380A00E87755 /* MKOAirdropActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77288B1B35380A00E87755 /* MKOAirdropActivityViewController.m */; };
+		BF77288F1B353CEB00E87755 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = BF77288E1B353CEB00E87755 /* Button.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BF77287A1B35378300E87755 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BF7728581B35378300E87755 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BF77285F1B35378300E87755;
-			remoteInfo = MKOAirdropActivityViewControllerSample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BF7728601B35378300E87755 /* MKOAirdropActivityViewControllerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MKOAirdropActivityViewControllerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,20 +28,14 @@
 		BF77286E1B35378300E87755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF7728701B35378300E87755 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF7728731B35378300E87755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BF7728791B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKOAirdropActivityViewControllerSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF77287E1B35378300E87755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF77287F1B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MKOAirdropActivityViewControllerSampleTests.m; sourceTree = "<group>"; };
+		BF77288A1B35380A00E87755 /* MKOAirdropActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKOAirdropActivityViewController.h; sourceTree = "<group>"; };
+		BF77288B1B35380A00E87755 /* MKOAirdropActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKOAirdropActivityViewController.m; sourceTree = "<group>"; };
+		BF77288D1B353CEB00E87755 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		BF77288E1B353CEB00E87755 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BF77285D1B35378300E87755 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BF7728761B35378300E87755 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,7 +49,6 @@
 			isa = PBXGroup;
 			children = (
 				BF7728621B35378300E87755 /* MKOAirdropActivityViewControllerSample */,
-				BF77287C1B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests */,
 				BF7728611B35378300E87755 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				BF7728601B35378300E87755 /* MKOAirdropActivityViewControllerSample.app */,
-				BF7728791B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,13 +64,16 @@
 		BF7728621B35378300E87755 /* MKOAirdropActivityViewControllerSample */ = {
 			isa = PBXGroup;
 			children = (
+				BF7728891B35380A00E87755 /* MKOAirdropViewController */,
 				BF7728671B35378300E87755 /* AppDelegate.h */,
 				BF7728681B35378300E87755 /* AppDelegate.m */,
 				BF77286A1B35378300E87755 /* ViewController.h */,
 				BF77286B1B35378300E87755 /* ViewController.m */,
+				BF77288D1B353CEB00E87755 /* Button.h */,
+				BF77288E1B353CEB00E87755 /* Button.m */,
 				BF77286D1B35378300E87755 /* Main.storyboard */,
-				BF7728701B35378300E87755 /* Images.xcassets */,
 				BF7728721B35378300E87755 /* LaunchScreen.xib */,
+				BF7728701B35378300E87755 /* Images.xcassets */,
 				BF7728631B35378300E87755 /* Supporting Files */,
 			);
 			path = MKOAirdropActivityViewControllerSample;
@@ -102,21 +88,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BF77287C1B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests */ = {
+		BF7728891B35380A00E87755 /* MKOAirdropViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BF77287F1B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.m */,
-				BF77287D1B35378300E87755 /* Supporting Files */,
+				BF77288A1B35380A00E87755 /* MKOAirdropActivityViewController.h */,
+				BF77288B1B35380A00E87755 /* MKOAirdropActivityViewController.m */,
 			);
-			path = MKOAirdropActivityViewControllerSampleTests;
-			sourceTree = "<group>";
-		};
-		BF77287D1B35378300E87755 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BF77287E1B35378300E87755 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = MKOAirdropViewController;
+			path = ../../MKOAirdropViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,24 +118,6 @@
 			productReference = BF7728601B35378300E87755 /* MKOAirdropActivityViewControllerSample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BF7728781B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BF7728861B35378300E87755 /* Build configuration list for PBXNativeTarget "MKOAirdropActivityViewControllerSampleTests" */;
-			buildPhases = (
-				BF7728751B35378300E87755 /* Sources */,
-				BF7728761B35378300E87755 /* Frameworks */,
-				BF7728771B35378300E87755 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BF77287B1B35378300E87755 /* PBXTargetDependency */,
-			);
-			name = MKOAirdropActivityViewControllerSampleTests;
-			productName = MKOAirdropActivityViewControllerSampleTests;
-			productReference = BF7728791B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -168,10 +129,6 @@
 				TargetAttributes = {
 					BF77285F1B35378300E87755 = {
 						CreatedOnToolsVersion = 6.3.2;
-					};
-					BF7728781B35378300E87755 = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = BF77285F1B35378300E87755;
 					};
 				};
 			};
@@ -189,7 +146,6 @@
 			projectRoot = "";
 			targets = (
 				BF77285F1B35378300E87755 /* MKOAirdropActivityViewControllerSample */,
-				BF7728781B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,13 +161,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF7728771B35378300E87755 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -220,28 +169,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF77286C1B35378300E87755 /* ViewController.m in Sources */,
+				BF77288C1B35380A00E87755 /* MKOAirdropActivityViewController.m in Sources */,
+				BF77288F1B353CEB00E87755 /* Button.m in Sources */,
 				BF7728691B35378300E87755 /* AppDelegate.m in Sources */,
 				BF7728661B35378300E87755 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF7728751B35378300E87755 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF7728801B35378300E87755 /* MKOAirdropActivityViewControllerSampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BF77287B1B35378300E87755 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BF77285F1B35378300E87755 /* MKOAirdropActivityViewControllerSample */;
-			targetProxy = BF77287A1B35378300E87755 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BF77286D1B35378300E87755 /* Main.storyboard */ = {
@@ -363,40 +298,6 @@
 			};
 			name = Release;
 		};
-		BF7728871B35378300E87755 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MKOAirdropActivityViewControllerSampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MKOAirdropActivityViewControllerSample.app/MKOAirdropActivityViewControllerSample";
-			};
-			name = Debug;
-		};
-		BF7728881B35378300E87755 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MKOAirdropActivityViewControllerSampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MKOAirdropActivityViewControllerSample.app/MKOAirdropActivityViewControllerSample";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,14 +317,7 @@
 				BF7728851B35378300E87755 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		BF7728861B35378300E87755 /* Build configuration list for PBXNativeTarget "MKOAirdropActivityViewControllerSampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BF7728871B35378300E87755 /* Debug */,
-				BF7728881B35378300E87755 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
