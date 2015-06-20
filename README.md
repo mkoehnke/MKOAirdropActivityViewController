@@ -6,8 +6,8 @@ I currently use it in a side project as an intermediate solution. It was tested 
 **Note:** This hack doesn't use any private API. But the view structure of UIActivityViewController might change with any future release, so it is **not recommended** to use this in production.
 
 <div>
-<img width=220 src="https://raw.githubusercontent.com/mkoehnke/MKOAirdropActivityViewController/master/Resources/Image-0.jpg?token=ABXNjVNuPSVGXStcN6FRPRJrMHXofWuzks5Vjk7swA%3D%3D">
-<img width=220 src="https://raw.githubusercontent.com/mkoehnke/MKOAirdropActivityViewController/master/Resources/Image-1.jpg?token=ABXNjSp-2-xn5OjT5wcbVNYL6aGAvtFNks5Vjl7uwA%3D%3D">
+<img width=300 src="https://raw.githubusercontent.com/mkoehnke/MKOAirdropActivityViewController/master/Resources/Image-0.jpg?token=ABXNjVNuPSVGXStcN6FRPRJrMHXofWuzks5Vjk7swA%3D%3D">
+<img width=300 src="https://raw.githubusercontent.com/mkoehnke/MKOAirdropActivityViewController/master/Resources/Image-1.jpg?token=ABXNjSp-2-xn5OjT5wcbVNYL6aGAvtFNks5Vjl7uwA%3D%3D">
 </div>
 
 # License
