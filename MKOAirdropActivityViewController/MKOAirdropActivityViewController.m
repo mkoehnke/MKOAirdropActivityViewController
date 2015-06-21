@@ -53,6 +53,7 @@ static NSUInteger MKONumberOfActivitySections = 3;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    #pragma unused(collectionView)
     return 1;
 }
 
@@ -105,6 +106,7 @@ static NSUInteger MKONumberOfActivitySections = 3;
 
 
 - (void)setExcludedActivityTypes:(NSArray *)excludedActivityTypes {
+    #pragma unused(excludedActivityTypes)
     // In order to have a consistent number of sections, we ignore excluded activity types here.
 }
 

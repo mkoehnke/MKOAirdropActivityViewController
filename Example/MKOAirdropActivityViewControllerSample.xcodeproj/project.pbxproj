@@ -286,6 +286,21 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wundef",
+					"-Wsign-compare",
+					"-Wshadow",
+					"-Wreturn-type",
+					"-Wnewline-eof",
+					"-Wimplicit-retain-self",
+					"-Wfloat-equal",
+					"-Wextra",
+					"-Werror",
+					"-Wempty-body",
+					"-Wdeprecated-implementations",
+					"-Wconversion",
+					"-Wall",
+				);
 			};
 			name = Debug;
 		};
@@ -297,6 +312,21 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = (
+					"-Wundef",
+					"-Wsign-compare",
+					"-Wshadow",
+					"-Wreturn-type",
+					"-Wnewline-eof",
+					"-Wimplicit-retain-self",
+					"-Wfloat-equal",
+					"-Wextra",
+					"-Werror",
+					"-Wempty-body",
+					"-Wdeprecated-implementations",
+					"-Wconversion",
+					"-Wall",
+				);
 			};
 			name = Release;
 		};
