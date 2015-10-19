@@ -1,7 +1,7 @@
 # MKOAirdropActivityViewController
-This is basically a **view hierarchy hack** of the UIActivityViewController to hide the sharing sections below the Airdrop field. With the introduction of sharing extensions in iOS8 it is currently not possible to hide those sections using the **excludedActivityTypes** property anymore.
+This is basically a **view hierarchy hack** of the UIActivityViewController to hide the sharing sections below the Airdrop field. With the introduction of sharing extensions in iOS9 it is currently not possible to hide those sections using the **excludedActivityTypes** property anymore.
 
-I currently use it in a side project as an intermediate solution. It was tested with iOS8.
+I currently use it in a side project as an intermediate solution. It was tested with iOS9. 
 
 **Note:** This hack doesn't use any private API. But the view structure of UIActivityViewController might change with any future release, so it is **not recommended** to use this in production.
 

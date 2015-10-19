@@ -23,8 +23,7 @@
 
 #import "MKOAirdropActivityViewController.h"
 
-static NSUInteger MKONumberOfActivitySections = 3;
-
+static CGFloat MKODefaultAirdropCellHeight = 125.0;
 
 @interface MKOAirdropActivityViewControllerProxyDatasource : NSObject <UICollectionViewDataSource>
 @property (nonatomic, strong) id<UICollectionViewDataSource> originalDataSource;
@@ -73,27 +72,44 @@ static NSUInteger MKONumberOfActivitySections = 3;
 
 @implementation MKOAirdropActivityViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    if ([self operatingSystemIsSupported]) {
-        [self __modifyCollectionViews:self.view];
-        [self set__proxyDatasource:[MKOAirdropActivityViewControllerProxyDatasource proxyWithDatasource:self.__collectionView.dataSource]];
-        [self.__collectionView setDataSource:self.__proxyDatasource];
+- (instancetype)initWithActivityItems:(NSArray *)activityItems applicationActivities:(NSArray<__kindof UIActivity *> *)applicationActivities {
+    self = [super initWithActivityItems:activityItems applicationActivities:applicationActivities];
+    if (self) {
+        if ([self operatingSystemIsSupported]) {
+            [self __identifyMainCollectionView:self.view];
+            [self set__proxyDatasource:[MKOAirdropActivityViewControllerProxyDatasource proxyWithDatasource:self.__collectionView.dataSource]];
+            [self.__collectionView setDataSource:self.__proxyDatasource];
+            [self __hideActivityCollectionViews:self.view];
+            
+            UIViewController *containerViewController = self.childViewControllers.firstObject.childViewControllers.firstObject;
+            CGSize preferredContentSize = containerViewController.preferredContentSize;
+            containerViewController.preferredContentSize = CGSizeMake(preferredContentSize.width, MKODefaultAirdropCellHeight);
+            
+            // Alternative
+            //SEL selector = NSSelectorFromString(@"_updatePreferredContentSizes");
+            //((void (*)(id, SEL))[self methodForSelector:selector])(self, selector);
+        }
+    }
+    return self;
+}
+
+- (void)__hideActivityCollectionViews:(UIView *)currentView {
+    for (UIView *subview in currentView.subviews) {
+        if ([subview isKindOfClass:[UICollectionView class]] && [subview isEqual:self.__collectionView] == NO) {
+            subview.hidden = YES;
+        }
+        [self __hideActivityCollectionViews:subview];
     }
 }
 
-- (void)__modifyCollectionViews:(UIView *)currentView {
+- (void)__identifyMainCollectionView:(UIView *)currentView {
     if (self.__collectionView) return;
     for (UIView *subview in currentView.subviews) {
         if ([self __isMainCollectionView:subview]) {
             self.__collectionView = (UICollectionView *)subview;
-            BOOL isAirdropShown = subview.subviews.count == MKONumberOfActivitySections;
-            for (NSUInteger i = 0; i < subview.subviews.count; i++) {
-                [subview.subviews[i] setHidden:!(i == 0 && isAirdropShown)];
-            }
             return;
         }
-        [self __modifyCollectionViews:subview];
+        [self __identifyMainCollectionView:subview];
     }
 }
 
@@ -112,7 +128,7 @@ static NSUInteger MKONumberOfActivitySections = 3;
 
 
 - (BOOL)operatingSystemIsSupported {
-    NSOperatingSystemVersion version = {8, 0 ,0};
+    NSOperatingSystemVersion version = {9, 0 ,0};
     return [[NSProcessInfo processInfo] respondsToSelector:@selector(isOperatingSystemAtLeastVersion:)] &&
            [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:version];
 }
