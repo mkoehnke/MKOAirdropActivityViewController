@@ -23,8 +23,6 @@
 
 #import "MKOAirdropActivityViewController.h"
 
-static CGFloat MKODefaultAirdropCellHeight = 125.0;
-
 @interface MKOAirdropActivityViewControllerProxyDatasource : NSObject <UICollectionViewDataSource>
 @property (nonatomic, strong) id<UICollectionViewDataSource> originalDataSource;
 @end
@@ -81,10 +79,15 @@ static CGFloat MKODefaultAirdropCellHeight = 125.0;
             [self.__collectionView setDataSource:self.__proxyDatasource];
             [self __hideActivityCollectionViews:self.view];
             
-            UIViewController *containerViewController = self.childViewControllers.firstObject.childViewControllers.firstObject;
-            CGSize preferredContentSize = containerViewController.preferredContentSize;
-            containerViewController.preferredContentSize = CGSizeMake(preferredContentSize.width, MKODefaultAirdropCellHeight);
-            
+            UIViewController *alertViewController = self.childViewControllers.firstObject;
+            UIViewController *groupViewController = alertViewController.childViewControllers.firstObject;
+            UIViewController *airdropViewController = groupViewController.childViewControllers.firstObject;
+            if (groupViewController && airdropViewController) {
+                CGFloat width = groupViewController.preferredContentSize.width;
+                CGFloat height = airdropViewController.preferredContentSize.height;
+                groupViewController.preferredContentSize = CGSizeMake(width, height);
+            }
+
             // Alternative
             //SEL selector = NSSelectorFromString(@"_updatePreferredContentSizes");
             //((void (*)(id, SEL))[self methodForSelector:selector])(self, selector);
