@@ -24,22 +24,19 @@
 #import "ViewController.h"
 #import "MKOAirdropActivityViewController.h"
 
-@interface ViewController ()
-@property (nonatomic, strong) UIPopoverController *popover;
-@end
-
 @implementation ViewController
 
 - (IBAction)showAirDrop:(UIButton *)button {
     UIImage *image = [UIImage imageNamed:@"octocat"];
     MKOAirdropActivityViewController *vc = [[MKOAirdropActivityViewController alloc] initWithActivityItems:@[image] applicationActivities:nil];
     
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        self.popover = [[UIPopoverController alloc] initWithContentViewController:vc];
-        [self.popover presentPopoverFromRect:button.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-    } else {
-        [self presentViewController:vc animated:YES completion:nil];
+    if (self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        vc.modalPresentationStyle = UIModalPresentationPopover;
+        UIPopoverPresentationController *popover = vc.popoverPresentationController;
+        popover.sourceView = button;
+        popover.sourceRect = button.bounds;
     }
+    
+    [self presentViewController:vc animated:YES completion:nil];
 }
-
 @end
