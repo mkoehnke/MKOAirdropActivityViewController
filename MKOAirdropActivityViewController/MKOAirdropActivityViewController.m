@@ -65,6 +65,7 @@
 
 @interface MKOAirdropActivityViewController ()
 @property (nonatomic, weak) UICollectionView *__collectionView;
+@property (nonatomic, weak) UIViewController *__airdropViewController;
 @property (nonatomic, strong) id<UICollectionViewDataSource> __proxyDatasource;
 @end
 
@@ -77,15 +78,15 @@
             [self __identifyMainCollectionView:self.view];
             [self set__proxyDatasource:[MKOAirdropActivityViewControllerProxyDatasource proxyWithDatasource:self.__collectionView.dataSource]];
             [self.__collectionView setDataSource:self.__proxyDatasource];
-            [self __hideActivityCollectionViews:self.view];
             
             UIViewController *alertViewController = self.childViewControllers.firstObject;
             UIViewController *groupViewController = alertViewController.childViewControllers.firstObject;
-            UIViewController *airdropViewController = groupViewController.childViewControllers.firstObject;
-            if (groupViewController && airdropViewController) {
+            self.__airdropViewController = groupViewController.childViewControllers.firstObject;
+            if (groupViewController && self.__airdropViewController) {
                 CGFloat width = groupViewController.preferredContentSize.width;
-                CGFloat height = airdropViewController.preferredContentSize.height;
+                CGFloat height = self.__airdropViewController.preferredContentSize.height;
                 groupViewController.preferredContentSize = CGSizeMake(width, height);
+                [self __hideActivityCollectionViewsWithRootView:self.view];
             }
 
             // Alternative
@@ -96,12 +97,15 @@
     return self;
 }
 
-- (void)__hideActivityCollectionViews:(UIView *)currentView {
-    for (UIView *subview in currentView.subviews) {
+- (void)__hideActivityCollectionViewsWithRootView:(UIView *)view {
+    for (UIView *subview in view.subviews) {
         if ([subview isKindOfClass:[UICollectionView class]] && [subview isEqual:self.__collectionView] == NO) {
-            subview.hidden = YES;
+            UICollectionView *collectionView = (UICollectionView *)subview;
+            if ([collectionView.dataSource isEqual:self.__airdropViewController] == NO) {
+                collectionView.hidden = YES;
+            }
         }
-        [self __hideActivityCollectionViews:subview];
+        [self __hideActivityCollectionViewsWithRootView:subview];
     }
 }
 
